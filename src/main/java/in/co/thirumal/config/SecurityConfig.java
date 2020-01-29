@@ -54,8 +54,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	 @Autowired
 	 public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		 auth.inMemoryAuthentication().passwordEncoder(passwordEncoder())
-	                .withUser("thirumal").password("$2a$11$WWZlUCd4XndWGpriAx7Pv.HpZ042awTnlAKr9VDiN9xEdPNS1Xy1q").roles("ADMIN").roles("ACTUATOR")
-	                .and().withUser("t").password("$2a$11$WWZlUCd4XndWGpriAx7Pv.HpZ042awTnlAKr9VDiN9xEdPNS1Xy1q").roles("LEAD");///.roles("ACTUATOR");
+	                .withUser("thirumal").password("$2a$11$WWZlUCd4XndWGpriAx7Pv.HpZ042awTnlAKr9VDiN9xEdPNS1Xy1q").roles("LEAD")//.roles("ACTUATOR")
+	                .and().withUser("t").password("$2a$11$WWZlUCd4XndWGpriAx7Pv.HpZ042awTnlAKr9VDiN9xEdPNS1Xy1q").roles("ADMIN");///.roles("ACTUATOR");
 	 }
 	 
 	 @Bean 

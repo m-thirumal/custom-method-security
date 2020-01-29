@@ -23,7 +23,7 @@ public class MethodSecurityController {
 	@Autowired
 	MethodSecurityService methodSecurityService;
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_LEAD')" + " or "+ "hasRole('ROLE_ADMIN')")
 	@GetMapping(value = "")
 	public String sayHello(@RequestParam(value = "name", defaultValue = "thirumal") String name) {
 		return methodSecurityService.sayHello(name);
