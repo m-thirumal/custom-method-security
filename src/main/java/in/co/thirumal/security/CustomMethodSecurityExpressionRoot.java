@@ -3,7 +3,6 @@ package in.co.thirumal.security;
 import org.springframework.security.access.expression.SecurityExpressionRoot;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionOperations;
 import org.springframework.security.core.Authentication;
-import org.springframework.stereotype.Component;
 
 //@Component
 public class CustomMethodSecurityExpressionRoot extends SecurityExpressionRoot implements MethodSecurityExpressionOperations {
@@ -15,9 +14,11 @@ public class CustomMethodSecurityExpressionRoot extends SecurityExpressionRoot i
 		super(authentication);
 	}
 	
-	 public boolean isMember(Long OrganizationId) {
-		 System.out.println("dfds");
-		 return true;
+	 public boolean isMember(Long id) {
+		 if (id.compareTo(100L) < 1) {
+			 return true;
+		 }
+		 return false;
 	 }
 
 	@Override
