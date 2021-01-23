@@ -22,7 +22,7 @@ import in.co.thirumal.service.MethodSecurityService;
  *
  */
 @RestController
-@RequestMapping("method")
+@RequestMapping("/method")
 public class MethodSecurityController {
 
 	@Autowired
@@ -30,30 +30,6 @@ public class MethodSecurityController {
 	
 	@Autowired
     private IAuthenticationFacade authenticationFacade;
-	
-	/** Works good**/
-	@PreAuthorize("hasRole('ROLE_LEAD')" + " or "+ "hasRole('ROLE_ADMIN')")
-	@GetMapping(value = "")
-	public String sayHello(@RequestParam(value = "name", defaultValue = "thirumal") String name) {
-		System.out.println("hi is accessed by " + authenticationFacade.getAuthentication());
-		return methodSecurityService.sayHello(name);
-	}
-	
-	/** Works good**/
-	@PreAuthorize("hasRole('ROLE_LEAD')")
-	@GetMapping(value = "/lead")
-	public String sayHelloToLead(@RequestParam(value = "name", defaultValue = "thirumal") String name) {
-		System.out.println("hi is accessed by " + authenticationFacade.getAuthentication());
-		return methodSecurityService.sayHello(name);
-	}
-	
-	/** Works good**/
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@GetMapping(value = "/admin")
-	public String sayHelloToAdmin(@RequestParam(value = "name", defaultValue = "thirumal") String name) {
-		System.out.println("hi is accessed by " + authenticationFacade.getAuthentication());
-		return methodSecurityService.sayHello(name);
-	}
 	
 	
 	@PreAuthorize("hasPermission(returnObject, 'read')")
