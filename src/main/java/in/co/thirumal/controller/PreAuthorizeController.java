@@ -14,7 +14,7 @@ import in.co.thirumal.service.IAuthenticationFacade;
 import in.co.thirumal.service.MethodSecurityService;
 
 /**
- * @author thirumal
+ * @author Thirumal
  *
  */
 @RestController
