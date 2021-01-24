@@ -56,6 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		 auth.inMemoryAuthentication().passwordEncoder(passwordEncoder())
 	                .withUser("thirumal").password("$2a$11$WWZlUCd4XndWGpriAx7Pv.HpZ042awTnlAKr9VDiN9xEdPNS1Xy1q").roles("LEAD")//.roles("ACTUATOR")
 	                .and().withUser("s").password("$2a$11$WWZlUCd4XndWGpriAx7Pv.HpZ042awTnlAKr9VDiN9xEdPNS1Xy1q").roles("S")//.roles("ACTUATOR")
+	                .and().withUser("v").password("$2a$11$WWZlUCd4XndWGpriAx7Pv.HpZ042awTnlAKr9VDiN9xEdPNS1Xy1q").roles("VIEWER")//.roles("ACTUATOR")
 	                .and().withUser("t").password("$2a$11$WWZlUCd4XndWGpriAx7Pv.HpZ042awTnlAKr9VDiN9xEdPNS1Xy1q").roles("ADMIN");///.roles("ACTUATOR");
 	 }
 	 
