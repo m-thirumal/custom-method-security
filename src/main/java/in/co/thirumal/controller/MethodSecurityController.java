@@ -40,9 +40,9 @@ public class MethodSecurityController {
 	}
 	
 	
-	@PreAuthorize("isMember(#id)")
+	@PreAuthorize("hasWorkerRole(#id)")
 	@GetMapping(value = "/custom/{id}")
-	public String customSecurity(@PathVariable long id, @RequestParam(value = "name", defaultValue = "thirumal") String name) {
+	public String customMethodSecurity(@PathVariable long id, @RequestParam(value = "name", defaultValue = "thirumal") String name) {
 		System.out.println(id);
 		System.out.println("hi is accessed by " + authenticationFacade.getAuthentication());
 		return methodSecurityService.sayHello(name);
